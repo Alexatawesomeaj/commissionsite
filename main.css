@@ -1,0 +1,27 @@
+body{
+    background-color: black;
+    margin: 0;
+    padding: 0;
+}
+
+#grad{
+    height:200px;
+    background-color:black;
+    background-image: linear-gradient(black, purple);
+}
+
+img.fs {
+    margin: -1 auto;
+    max-width: 100%;
+    height: auto;
+}
+h1 {
+    text-align: center;
+    font-family: cursive;
+    color:rgb(185, 0, 241);
+    padding: 0px;
+} 
+p {
+    font-family: cursive;
+    color:red
+}
