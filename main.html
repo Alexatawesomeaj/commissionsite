@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head class="container">
     <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commission Site</title>
 </head>
 <body>
-
-    <img class="fs" src="sources/headerbg.png">
-    <h1>So... You want art..?</h1>
-
+    <h0 class="container">
+        <img class="fs" id="fadeHeader" src="sources/headerbg.png">
+        <img class="smallimg" id="fadeDragon" src="sources/5years.png">
+    </h0>
+    <h1 id="headArt">So... You want art..?</h1>
+    <h2>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </h2>
 </body>
+<script>
+    window.addEventListener("scroll", function(event) {
+        var img = document.getElementById("fadeHeader");
+        var img1 = document.getElementById("fadeDragon");
+        var txt = document.getElementById("headArt");
+
+        var headerLength = 10;
+        var headerSpeed = 7;
+        img.style.opacity = (((100 * (headerLength) - window.scrollY) + (100 * headerSpeed)) / (100 * headerSpeed));
+        img.style.paddingTop = window.scrollY+"px";
+
+        var dragonLength = 3;
+        var dragonSpeed = 4;
+        img1.style.opacity = (((100 * (dragonLength) - window.scrollY) + (100 * dragonSpeed)) / (100 * dragonSpeed));
+    
+        var artDelay = 5;
+        var artSpeed = 3;
+        txt.style.opacity = (window.scrollY - (100 * (artDelay + 7))) / (100 * artSpeed);
+
+    })
+
+</script>
 </html>
