@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="comingsoon.css">
+    <meta charset="UTF-8" />
+    <title>Coming soon!</title>
+</head>
+<body id="flex-container">
+    Site Coming Soon!
+</body>
+<a class ="popup" onclick="playAudio(); playAnimation(); yaboi();">
+<img class="smol" id="animated" src="sources/adhd.png">
+<img class="smolhat" id="animated2" src="sources/adhdhat.png">
+</a>
+</html>
+<audio id="adhd" src="sources/squeak.mp3" autoplay="false"></audio>
+<span id="status">goon time</span>
+<span id="status2">supergoontime</span>
+<script>
+    let pressedNumber = 0;
+
+    setInterval(moveText, 50);
+    function moveText() {
+        var h = window.innerHeight-110;
+        var i = document.getElementById("flex-container");
+        i.style.height = h+"px";
+    }
+    moveText()
+
+    var adhdaudio = new Audio("sources/squeak.mp3");
+    function playAudio() {
+        adhdaudio.play();
+        pressedNumber += 1;
+    }
+    
+    function playAnimation() {
+        var x = document.getElementById("animated");
+        var y = document.getElementById("animated2");
+        x.style.animationName = "squish";
+        y.style.animationName = "squish2";
+        setTimeout(stopAnimation, 365);
+    }
+
+    function stopAnimation() {
+        var x = document.getElementById("animated");
+        var y = document.getElementById("animated2");
+        x.style.animationName = "none";
+        y.style.animationName = "none";
+    }
+
+    function yaboi() {
+        if (pressedNumber > 4 && pressedNumber <= 141) {
+            x = document.getElementById("status");
+            x.style.visibility = "visible";
+            document.getElementById("status").innerHTML = "You have pressed this boi "+ pressedNumber + " times!";
+        } if (pressedNumber > 141) {
+            w = document.getElementById("animated2");
+            y = document.getElementById("status2");
+            z = document.getElementById("animated");
+            w.style.visibility = "visible";
+            y.style.visibility = "visible";
+            z.style.visibility = "hidden";
+            document.getElementById("status").innerHTML = "You have pressed this boi "+ pressedNumber + " times! Wow!!";
+            document.getElementById("status2").innerHTML = "Here's a hat to celebrate!";
+        }
+    }
+</script>
