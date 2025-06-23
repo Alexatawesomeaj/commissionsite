@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <audio id="background-music" src="/sources/water.ogg" autoplay loop="true" preload="true"></audio>
+    <audio id="adhd" src="/sources/squeak.mp3"></audio>
     <link rel="stylesheet" href="comingsoon.css">
     <meta charset="UTF-8" />
     <title>Coming soon!</title>
@@ -9,16 +11,24 @@
 <body id="flex-container">
     Site Coming Soon!
 </body>
-<a class ="popup" onclick="playAudio(); playAnimation(); yaboi();">
+<a class ="popup" onclick="pressed()">
 <img class="smol" id="animated" src="sources/adhd.png">
 <img class="smolhat" id="animated2" src="sources/adhdhat.png">
 </a>
 </html>
-<audio id="adhd" src="sources/squeak.mp3" autoplay="false"></audio>
 <span id="status">goon time</span>
 <span id="status2">supergoontime</span>
 <script>
+
+    let bgmusic = document.getElementById("background-music");
+    bgmusic.volume=.15;
+    
     let pressedNumber = 0;
+    let canpress = true;
+
+    function setAvaliable() {
+        canpress = true;
+    }
 
     setInterval(moveText, 50);
     function moveText() {
@@ -65,4 +75,13 @@
             document.getElementById("status2").innerHTML = "Here's a hat to celebrate!";
         }
     }
+
+    function pressed() {
+        if (canpress) {
+            canpress = false;
+            playAudio();
+            playAnimation();
+            yaboi();
+            setTimeout(setAvaliable, 400);
+        }}
 </script>
