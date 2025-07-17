@@ -1,72 +1,134 @@
-html{
-    scroll-behavior: smooth
-}
-
-body{
-    background-color: rgb(34, 34, 34);
+html, body {
+    scroll-behavior: smooth;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
 
-head{
-    padding:0%;
-    margin:0%;
-}
-
-#grad{
-    height:200px;
-    background-color:rgb(0, 0, 0);
-    background-image: linear-gradient(black, purple);
-}
-
-img.fs {
+body {
+    background-color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
-    max-width: 100%;
-    height: auto;
-    position: auto;
+    /*overflow: hidden;*/
 }
 
-h1 {
-    text-align: center;
-    font-family: cursive;
-    color:rgb(185, 0, 241);
-    padding: 0px;
-    margin-top: 100px;
-    opacity: 0;
-} 
+head3 {
+    font-size: 4vw;
+    color: black;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    align-self: 50%;
 
-.txt {
-    text-align: left;
-    font-family:Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, rgb(142, 20, 153), rgb(8, 1, 110));
+    background-clip: text;
+    color: transparent;
+
+    position: relative;
+    padding-top: 20%;
+}
+
+.buttonBase {
+    height: 3svw;
+    width: 3svw;
+    background-color: rgb(89, 20, 153);
+    border-radius: 30%;
+
+    position: absolute;
+}
+
+.buttonArrow {
     color:white;
-    padding:5%;
+    font-size: 1.5vw;
+    font-family: "Comic Sans MS", bold, sans-serif;
+    position: relative;
+    margin-top: -0.5svw;
 }
 
-p {
-    font-family: cursive;
-    color:red
+.buttonGradient {
+    color: rgb(0, 0, 0, 0);
+    height: 3.7svw;
+    width: 3.7svw;
+    background-image: radial-gradient(rgb(118, 53, 179), rgb(10, 1, 19));
+    border-radius: 35%;
+    z-index: -2;
+    position: absolute;
 }
 
-.container {
+.buttonHitbox {
+    height: 3.7svw;
+    width: 3.7svw;
+    border-radius: 35%;
+    z-index: 0;
+    position: absolute;
+}
+
+.FlexContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: auto;
+    width: 100%;
+}
+
+.headerImage {
     height: auto;
-    padding: 0px;
-    margin: 0px;
-    flex-direction:column;
+    width: 100%;
+    position: absolute;
+    margin-top: -10svw;
+    z-index: -1;
 }
 
-#fadeimage{
-    max-width: 25%;
+.textCover {
+    height: 6svw;
+    width: 40svw;
+    background-color: rgb(0, 0, 0);
+    position: absolute;
+    opacity: 0%;
+
+    animation: FadeOut 4s;
+    animation-play-state: running;
 }
 
-.smallimg{
-    max-width: 25%;
-    opacity: 1;
-    position: relative;
-    margin-top: -25%;
-    margin-left: -30%;
+#removeScrollBar {
+    overflow: hidden;
+}
+
+#button {
+    margin-top: 8%;
+    opacity: 100%;
+
+    animation: ButtonFlyIn 5s;
+    animation-play-state: running;
+}
+
+#cantSelect {
+    -webkit-user-select: none;
+    user-select: none;
+    -ms-user-select: none;
+}
+
+#tempThing {
+    color: white;
+    font-size: larger;
+}
+
+@keyframes FadeOut {
+    0%      {opacity: 100;}
+    100%    {opacity: 0;}
+}
+
+@keyframes DelayFadeOut {
+    0%      {opacity: 100;}
+    50%     {opacity: 100;}
+    100%    {opacity: 0;}
+}
+
+@keyframes TextFlyIn {
+    0%        {transform: translateY(50%);}
+    100%      {transform: translateY(0%);}
+}
+
+@keyframes ButtonFlyIn {
+    0%      {transform: translateY(1500%); opacity: 0%;}
+    25%     {transform: translateY(1500%); opacity: 0%;}
+    75%     {opacity: 0%;}
+    100%    {transform: translateY(0%); opacity: 100%;}
 }

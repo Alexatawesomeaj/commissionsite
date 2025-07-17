@@ -1,41 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head class="container">
+<head>
     <link rel="stylesheet" href="main.css">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport">
     <title>Commission Site</title>
 </head>
-<body>
-    <h0 class="container">
-        <img class="fs" id="fadeHeader" src="sources/headerbg.png">
-        <img class="smallimg" id="fadeDragon" src="sources/5years.png">
-    </h0>
-    <h1 id="headArt">So... You want art..?</h1>
-    <h2>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </h2>
-</body>
+
+<head1>
+    <img src="sources/headerbg.png" class="headerImage" id="headerImage"></img>
+</head1>
+
+<head3 class="FlexContainer" id="cantSelect" id="headerText">
+   <div>So... you want art..?</div>
+   <div class=textCover></div>
+</head3>
+
+<head2 class="FlexContainer" id="button" id="buttonFade">
+    <div class="buttonBase"></div>
+    <div class="buttonArrow" id="cantSelect">↓</div>
+    <div class="buttonGradient"></div>
+    <div class="buttonHitbox" onclick="startPage()"></div>
+</head2>
+
+<div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<div id="tempThing">test</div>
+
+<div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+
 <script>
-    window.addEventListener("scroll", function(event) {
-        var img = document.getElementById("fadeHeader");
-        var img1 = document.getElementById("fadeDragon");
-        var txt = document.getElementById("headArt");
+    var canClick = false
 
-        var headerLength = 10;
-        var headerSpeed = 7;
-        img.style.opacity = (((100 * (headerLength) - window.scrollY) + (100 * headerSpeed)) / (100 * headerSpeed));
-        img.style.paddingTop = window.scrollY+"px";
+    setTimeout(allowProgress(), 6000);
 
-        var dragonLength = 3;
-        var dragonSpeed = 4;
-        img1.style.opacity = (((100 * (dragonLength) - window.scrollY) + (100 * dragonSpeed)) / (100 * dragonSpeed));
-    
-        var artDelay = 5;
-        var artSpeed = 3;
-        txt.style.opacity = (window.scrollY - (100 * (artDelay + 7))) / (100 * artSpeed);
+    function allowProgress() {
+        canClick = true;
+        console.log("ACTIVE")
+    }
 
-    })
+    const locationA = document.getElementById("tempThing");
 
+    function startPage() { if (canClick) {
+        console.log("worked");
+        locationA.scrollIntoView({behavior:'smooth', block: "center"});
+    }
+        
+    }
 </script>
 </html>
