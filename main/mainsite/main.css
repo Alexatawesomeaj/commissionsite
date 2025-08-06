@@ -9,7 +9,7 @@ body {
     background-color: rgb(0, 0, 0);
     margin: 0;
     padding: 0;
-    /*overflow: hidden;*/
+    /* overflow: hidden; */
 }
 
 head3 {
@@ -24,6 +24,74 @@ head3 {
 
     position: relative;
     padding-top: 20%;
+}
+
+body99 {
+    font-size: 1.5vw;
+    color: purple;
+    font-family: handWritten;
+    font-style: italic;
+    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10000000000;
+}
+
+head4 {
+    margin: 0;
+    padding: 0;
+}
+
+head6 {
+    flex-direction: column-reverse;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    bottom: 180vmax;
+
+    font-family: handwritten;
+    font-style: italic;
+    color: rgb(199, 54, 199);
+    font-size: 3vw;
+}
+
+.stuffWriting {
+    transform: rotate(10deg);
+    padding-left: 5vw;
+    margin-top: 5vh;
+}
+
+.backgroundRectangle {
+    height: 93vh;
+    width: 27.25%;
+    background-image: linear-gradient(rgba(93, 0, 214, 0.5), rgba(133, 0, 185, 0.5));
+    position: absolute;
+
+    z-index: 4;
+
+    left: 0.5%;
+}
+
+.imageRotation {
+    display: flex;
+    max-width: auto;
+    height: 90vh;
+    position: relative;
+
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    
+
+    padding-left: 1.5%;
+    bottom: 143vmax;
+}
+
+.backgroundImage {
+    width: 100%;
 }
 
 .buttonBase {
@@ -76,6 +144,13 @@ head3 {
     z-index: -1;
 }
 
+.bodyImage {
+    width: 100;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+}
+
 .textCover {
     height: 6svw;
     width: 40svw;
@@ -83,12 +158,41 @@ head3 {
     position: absolute;
     opacity: 0%;
 
-    animation: FadeOut 4s;
+    animation: FadeOut 2.56s;
     animation-play-state: running;
 }
 
-#removeScrollBar {
-    overflow: hidden;
+.fadeIn {
+    animation: FadeIn 0.75s;
+}
+
+.fadeOut {
+    animation: FadeOut 0.75s;
+}
+
+.imageFade {
+    animation-name: ImageFade;
+    animation-duration: 5s;
+
+    z-index: 6
+}
+
+.arrowGif {
+    scale: 40%;
+    transform: rotate(-80deg);
+    position: relative;
+
+    margin-top: -5vw;
+    left: -12vw;
+}
+
+#fade-to-image {
+    width: 100%;
+    height: 50svw;
+
+    position: absolute;
+    background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0, 0));
+    z-index: 0;
 }
 
 #button {
@@ -97,6 +201,24 @@ head3 {
 
     animation: ButtonFlyIn 5s;
     animation-play-state: running;
+}
+
+#downButton {
+    position: fixed;
+    opacity: 0;
+    z-index: 9999999999;
+
+    margin-left: 46%;
+    bottom: 5%;
+}
+
+#upButton {
+    position: fixed;
+    opacity: 0;
+    z-index: 9999999999;
+
+    top: 5%;
+    margin-left: 46%;
 }
 
 #cantSelect {
@@ -115,15 +237,22 @@ head3 {
     100%    {opacity: 0;}
 }
 
+@keyframes FadeIn {
+    0%      {opacity: 0;}
+    100%    {opacity: 100;}
+}
+
 @keyframes DelayFadeOut {
     0%      {opacity: 100;}
     50%     {opacity: 100;}
     100%    {opacity: 0;}
 }
 
-@keyframes TextFlyIn {
-    0%        {transform: translateY(50%);}
-    100%      {transform: translateY(0%);}
+@keyframes ImageFade {
+    0%      {opacity: 0%;}
+    25%     {opacity: 100%;}
+    80%     {opacity: 100%;}
+    100%    {opacity: 0%;}
 }
 
 @keyframes ButtonFlyIn {
@@ -131,4 +260,9 @@ head3 {
     25%     {transform: translateY(1500%); opacity: 0%;}
     75%     {opacity: 0%;}
     100%    {transform: translateY(0%); opacity: 100%;}
+}
+
+@font-face {
+    font-family: handWritten;
+    src: url(sources/NightPumpkind-nRORO.otf);
 }
